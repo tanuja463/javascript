@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart Calculator</title>
+</head>
+<body>
+
+    <h2>Shopping Cart</h2>
+
+    <button onclick="calculateTotal()">Calculate Price</button>
+
+    <script>
+        // Array of product objects
+        let cart = [
+            { name: "Laptop", price: 50000, quantity: 1 },
+            { name: "Mouse", price: 500, quantity: 2 },
+            { name: "Keyboard", price: 1500, quantity: 1 }
+        ];
+
+        function calculateTotal() {
+            let totalPrice = 0;
+
+            // Loop to calculate total price
+            for (let i = 0; i < cart.length; i++) {
+                totalPrice += cart[i].price * cart[i].quantity;
+            }
+
+            console.log("Total Price before discount:", totalPrice);
+
+            // Discount using if-else
+            let discount = 0;
+            if (totalPrice >= 60000) {
+                discount = totalPrice * 0.20;
+            } else if (totalPrice >= 30000) {
+                discount = totalPrice * 0.10;
+            }
+
+            let finalPrice = totalPrice - discount;
+            console.log("Discount Applied:", discount);
+            console.log("Price after Discount:", finalPrice);
+
+            // Switch case for payment mode
+            let paymentMode = "UPI";
+
+            switch (paymentMode) {
+                case "CASH":
+                    console.log("Payment Mode: Cash");
+                    break;
+                case "CARD":
+                    console.log("Payment Mode: Card");
+                    break;
+                case "UPI":
+                    console.log("Payment Mode: UPI");
+                    break;
+                default:
+                    console.log("Invalid Payment Mode");
+            }
+
+            console.log("Final Amount to Pay:", finalPrice);
+        }
+    </script>
+
+</body>
+</html>
