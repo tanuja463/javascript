@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <h1>LoginForm</h1>
+    <hr>
+
+    <h3>Username:</h3>
+    <input type="text" id="username" required><br><br>
+
+    <h3>Password:</h3>
+    <input type="password" id="password" required><br><br>
+
+    <h5>Forgot Password?</h5>
+
+    <button onclick="login()">Login</button>
+
+    <p>Not a Member?</p>
+    <button style="color: rgb(33, 124, 124);">Signup</button>
+
+    <!-- JavaScript -->
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            console.log("Username:", username);
+            console.log("Password:", password);
+
+            if (username !== "" && password !== "") {
+                alert("Login Successful ✅");
+            } else {
+                alert("Login Failed ❌ Please enter all details");
+            }
+        }
+    </script>
+
+</body>
+</html>
